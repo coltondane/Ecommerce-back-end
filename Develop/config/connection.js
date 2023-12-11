@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const Sequelize = require('sequelize');
 
+// if the JAWSDB_URL exists, it means we are deployed and should use the JawsDB database, otherwise use the local database
 const sequelize = process.env.JAWSDB_URL
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
