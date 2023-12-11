@@ -27,7 +27,7 @@ router.get('/:id', async (req, res) => {
       include: [Product],
     });
     if (!categoryData) {
-      res.status(404).json({ message: 'No Category Data found for that ID' });
+      res.status(404).json({ message: 'No Category Data found with that id' });
       return;
     }
     res.status(200).json(categoryData);
@@ -79,7 +79,7 @@ router.delete('/:id', async (req, res) => {
       }
     });
     if (!categoryData) {
-      res.status(404).json({ message: 'No Category found with that ID' });
+      res.status(404).json({ message: 'No Category found with that id' });
       return;
     }
     res.status(200).json(categoryData);
