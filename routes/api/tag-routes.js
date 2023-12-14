@@ -61,7 +61,7 @@ router.put('/:id', async (req, res) => {
       return;
     }
     // show data
-    res.status(200).json(newTagData);
+  res.status(200).json({message: 'Tag updated'});
   } catch (error) {
     res.status(500).json(error);
   }
