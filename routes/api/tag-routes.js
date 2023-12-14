@@ -17,8 +17,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+// find a single tag by its `id`
 router.get('/:id', async (req, res) => {
-  // find a single tag by its `id`
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findOne( {
@@ -36,8 +36,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// create a new tag
 router.post('/', async (req, res) => {
-  // create a new tag
   try {
     const tagData = await Tag.create(req.body)
     // show data
@@ -81,7 +81,7 @@ router.delete('/:id', async (req, res) => {
       return;
     }
     // show data
-    res.status(200).json(tagDeleted);
+    res.status(200).json({message: 'Tag deleted'});
   } catch (error) {
     res.status(500).json(error);
   }
